@@ -13,6 +13,6 @@ func Unmarshal(r io.Reader, out interface{}) error {
 }
 
 // Marshal returns  CSV in writer from the interface.
-func Marshal(w io.Writer, in interface{}) error {
+func Marshal(in interface{}, w io.Writer) error {
 	return gocsv.MarshalCSV(in, gocsv.NewSafeCSVWriter(csv.NewWriter(w)))
 }
