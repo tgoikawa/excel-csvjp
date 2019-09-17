@@ -1,18 +1,18 @@
-package jpgocsv
+package gocsv
 
 import (
 	"io"
 
 	"github.com/gocarina/gocsv"
-	"github.com/tgoikawa/jpcsv"
+	"github.com/tgoikawa/excelcsvjp"
 )
 
 // Unmarshal parses the CSV from the reader in the interface.
 func Unmarshal(r io.Reader, out interface{}) error {
-	return gocsv.UnmarshalCSV(jpcsv.NewReader(r), out)
+	return gocsv.UnmarshalCSV(excelcsvjp.NewReader(r), out)
 }
 
 // Marshal returns  CSV in writer from the interface.
 func Marshal(w io.Writer, in interface{}) error {
-	return gocsv.MarshalCSV(in, gocsv.NewSafeCSVWriter(jpcsv.NewWriter(w)))
+	return gocsv.MarshalCSV(in, excelcsvjp.NewSafeCSVWriter(csvjp.NewWriter(w)))
 }

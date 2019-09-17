@@ -1,4 +1,4 @@
-package jpcsv
+package excelcsvjp
 
 import (
 	"encoding/csv"

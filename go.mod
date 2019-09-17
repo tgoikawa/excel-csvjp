@@ -1,4 +1,4 @@
-module github.com/tgoikawa/jpcsv
+module github.com/tgoikawa/excelcsvjp
 
 require (
 	github.com/gocarina/gocsv v0.0.0-20190821091544-020a928c6f4e
