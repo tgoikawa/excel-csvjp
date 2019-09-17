@@ -15,7 +15,7 @@ func NewReader(r io.Reader) *csv.Reader {
 
 // NewWriter 与えられたio.Writerを元に新しいcsvライターを返す
 func NewWriter(w io.Writer) *csv.Writer {
-	writer := csv.NewWriter(transform.NewWriter(w, japanese.ShiftJIS.NewDecoder()))
+	writer := csv.NewWriter(transform.NewWriter(w, japanese.ShiftJIS.NewEncoder()))
 	writer.UseCRLF = true
 	return writer
 }
